@@ -2,7 +2,7 @@
 
 require "colorize"
 
-#class to define the secret code of the game.
+# class to define the secret code of the game.
 class Secret
   attr_reader :code
 
@@ -19,15 +19,22 @@ class Secret
 
     @colors = [1, 2, 3, 4, 5, 6]
     @code = Array.new(4) { @colors.sample }
-
   end
 
   def display_code
     @color_code = @code.map { |num| @color_map[num] }.join(" ")
   end
 
+  def display_menu
+
+    puts "\nPick 4 colors using their numbers:"
+    puts @color_map.map { |key, value| "#{key}: #{value}" }.join("  ")
+    puts "\nEnter your guess (e.g. 1 3 2 5):"
+  end
+
 end
 
-secret = Secret.new
-p secret.code
-puts secret.display_code
+# secret = Secret.new
+# p secret.code
+# puts secret.display_code
+# #puts secret.display_menu

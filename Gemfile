@@ -4,4 +4,5 @@ source "https://rubygems.org"
 
 # gem "rails"
 gem require "colorize"
-gem require "rubocop-performance": false 
+gem require "rubocop-performance": false
+gem require "ruby_figlet"

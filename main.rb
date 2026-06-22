@@ -20,3 +20,31 @@
 
 #     Not directly helpful, but here are some Ruby game libraries for fun.
 #
+
+# require_relative "lib/computer"
+# require_relative "lib/game"
+# require_relative "lib/player"
+# require_relative "lib/secret"
+require "io/console"
+require "ruby_figlet"
+using RubyFiglet
+
+def game_title
+  title = RubyFiglet::Figlet.new "Mastermind", 'basic'
+  terminal_width = IO.console.winsize[1]
+  title.to_s.lines.each do |line|
+    puts line.chomp.center(terminal_width)
+  end
+  description = "\n Mastermind is a game of skill, in which two players engage in a battle of wits and logic.
+
+    1. The Codebreaker supplies a guess for the secret code hidden by the Codemaker.
+    2. The Codemaker then scores the Codebreaker's guess against the hidden secret code,
+    and provides the Codebreaker with a feedback to be used in preparing the next guess."
+
+  description.lines.each do |line|
+   puts line.chomp.center(terminal_width)
+  end
+
+end
+
+game_title
