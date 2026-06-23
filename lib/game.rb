@@ -51,13 +51,13 @@ class Game
             remaining_secret.delete(remaining_secret.index(color))
           end
         end
-        p remaining_guess
+        #p remaining_guess
 
         p "#{match} right guesses and #{color_only} color-only matches!!!"
 
       end
       turn += 1
-      puts "Try Again! You got #{total_turns - turn} more tries"
+      puts "Try Again! You got #{total_turns - turn + 1} more tries"
       if turn > total_turns
         puts "You Lose!! Better luck Next Time!"
         break
