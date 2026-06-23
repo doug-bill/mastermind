@@ -5,6 +5,7 @@ require "colorize"
 # class to define the secret code of the game.
 class Secret
   attr_reader :code
+  attr_reader :color_map
 
   def initialize
 
@@ -19,6 +20,8 @@ class Secret
 
     @colors = [1, 2, 3, 4, 5, 6]
     @code = Array.new(4) { @colors.sample }
+    # @code2 = [1, 1, 3, 4] # EdgeCase Testing
+    # @code3 = [3, 5, 4, 5] # EdgeCase Testing
   end
 
   def display_code
@@ -30,6 +33,10 @@ class Secret
     puts "\nPick 4 colors using their numbers:"
     puts @color_map.map { |key, value| "#{key}: #{value}" }.join("  ")
     puts "\nEnter your guess (e.g. 1 3 2 5):"
+  end
+
+  def display_guess(input)
+    input.map { |num| @color_map[num] }.join(" ")
   end
 
 end
