@@ -1,57 +1,12 @@
 # Project: Mastermind
-# Introduction
 
-# If you’ve never played Mastermind, it’s a game where you have to guess your opponent’s secret code within a certain number of turns (like hangman with colored pegs). Each turn you get some feedback about how good your guess was – whether it was exactly correct or just the correct color but in the wrong space.
-# Assignment
-
-# Build a Mastermind game from the command line where you have 12 turns to guess the secret code, starting with you guessing the computer’s random code.
-
-#     Think about how you would set this problem up!
-#     Build the game assuming the computer randomly selects the secret colors and the human player must guess them. Remember that you need to give the proper feedback on how good the guess was each turn!
-#     Now refactor your code to allow the human player to choose whether they want to be the creator of the secret code or the guesser.
-#     Build it out so that the computer will guess if you decide to choose your own secret colors. You may choose to implement a computer strategy that follows the rules of the game or you can modify these rules.
-#     If you choose to modify the rules, you can provide the computer additional information about each guess. For example, you can start by having the computer guess randomly, but keep the ones that match exactly. You can add a little bit more intelligence to the computer player so that, if the computer has guessed the right color but the wrong position, its next guess will need to include that color somewhere.
-#     If you want to follow the rules of the game, you’ll need to research strategies for solving Mastermind.
-#     Post your solution below!
-
-# Additional resources
-
-# This section contains helpful links to related content. It isn’t required, so consider it supplemental.
-
-#     Not directly helpful, but here are some Ruby game libraries for fun.
-#
-
-#require_relative "lib/computer"
+# require_relative "lib/computer"
 require_relative "lib/game"
-#require_relative "lib/player"
+# require_relative "lib/player"
 require_relative "lib/secret"
 require "colorize"
 require "io/console"
 require "ruby_figlet"
 using RubyFiglet
 
-game = Game.new
-
-# Generates the Title Screen at the start of the game
-class Title
-
-  def game_title
-
-    title = RubyFiglet::Figlet.new "Mastermind", "basic"
-    terminal_width = IO.console.winsize[1]
-    title.to_s.lines.each do |line|
-      puts line.chomp.center(terminal_width).colorize(:green)
-    end
-
-    description = "\n Mastermind is a game of skill, in which two players engage in a battle of wits and logic.
-  \n1. The Codebreaker supplies a guess for the secret code hidden by the Codemaker.
-    2. The Codemaker then scores the Codebreaker's guess against the hidden secret code,
-    and provides the Codebreaker with a feedback to be used in preparing the next guess."
-    description.lines.each do |line|
-      puts line.strip.center(terminal_width)
-    end
-  end
-end
-
-Title.new.game_title
-game.new_game
+NewGame.new.game_title

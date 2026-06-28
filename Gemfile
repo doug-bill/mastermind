@@ -6,3 +6,4 @@ source "https://rubygems.org"
 gem require "colorize"
 gem require "rubocop-performance": false
 gem require "ruby_figlet"
+gem require "tty-prompt"

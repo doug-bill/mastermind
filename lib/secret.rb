@@ -2,10 +2,10 @@
 
 require "colorize"
 
+
 # class to define the secret code of the game.
 class Secret
-  attr_reader :code
-  attr_reader :color_map
+  attr_reader :code, :color_map, :colors
 
   def initialize
 
@@ -35,13 +35,13 @@ class Secret
     puts "\nEnter your guess (e.g. 1 3 2 5):"
   end
 
-  def display_guess(input)
+  def display_color_code(input)
     input.map { |num| @color_map[num] }.join(" ")
   end
 
 end
 
-# secret = Secret.new
+ secret = Secret.new
 # p secret.code
-# puts secret.display_code
-# #puts secret.display_menu
+#puts secret.display_code
+# puts secret.display_menu
